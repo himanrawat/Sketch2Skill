@@ -1,0 +1,70 @@
+"use client";
+
+import React from "react";
+import { IconPlayerPlay } from "@tabler/icons-react";
+// import ImageCircle from "./ImageCircle";
+import noise from "@/app/noise.svg";
+import Image from "next/image";
+import AnimatedTooltipPreview from "./example/animated-tooltip";
+import VideoButton from "./VideoButton";
+
+const HeroSection = () => {
+	return (
+		<>
+			<main className=" h-screen  bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 ">
+				<div
+					className="h-screen w-screen text-center flex justify-center items-center inset-0 mix-blend-normal "
+					style={{
+						backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+						backgroundSize: "100px 100px",
+					}}
+				>
+					<div className="text-left px-16 flex justify-center items-center">
+						<div className="w-full px-4">
+							<h6 className="lg:text-lg text-sm font-bold text-blue-700 mt-8">
+								Unleash Acedemic Excellence
+							</h6>
+							<h1 className="text-4xl lg:text-8xl font-bold leading-none capitalize">
+								Master Creative Skills and Launch your career now!
+							</h1>
+							<p className="mt-4 mb-4 text-xl">
+								Unlock your potential. Discover a world of knowledge. Start Your
+								journey today. Empower your future with over 100+ course to
+								choose from.
+							</p>
+							<div className="flex justify-center gap-4 mt-8  flex-wrap">
+								<button className="bg-blue-700 text-white px-8 py-2 rounded-md hover:bg-blue-800 font-bold h-14 w-52">
+									Book a Class
+								</button>
+								<button className="border border-slate-900 text-slate-900 dark:text-white  px-4 py-2 rounded-md flex items-center gap-2 hover:bg-slate-900 hover:text-white gr  font-bold group h-14 w-52">
+									<div className="p-2 border-2 border-slate-900 rounded-full w-fit group-hover:border-white">
+										<IconPlayerPlay className="w-4 h-4" />
+									</div>
+									Register as Tutor
+								</button>
+							</div>
+							<div className="my-8 ">
+								<p className="my-4 font-bold text-2xl text-center">
+									Trusted by 100k+ students
+								</p>
+								<AnimatedTooltipPreview />
+							</div>
+						</div>
+						<div className="w-full p-4 h-screen flex justify-center items-center relative">
+							<img
+								src="/profile.jpg"
+								alt="profile"
+								className="h-full rounded-3xl object-cover object-center w-full"
+							/>
+							<div className="absolute bottom-9 left-0 bg-white rounded-full p-4 mix-blend-normal ">
+								<VideoButton />
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</>
+	);
+};
+
+export default HeroSection;
