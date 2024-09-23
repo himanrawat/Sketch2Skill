@@ -1,6 +1,8 @@
+import BentoGridThirdDemo from "@/components/example/bento-grid";
 import FocusCard from "@/components/example/focus-card";
 import InfiniteMovingCard from "@/components/example/infinite-moving-text";
 import TabsSection from "@/components/example/tabs-section";
+import HoverEffect from "@/components/example/text-hover-effect";
 import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
@@ -16,6 +18,9 @@ export default function Home() {
 			</div>
 			<InfiniteMovingCard />
 			<TabsSection />
+			<BentoGridThirdDemo />
+			{/* footer */}
+			<HoverEffect />
 		</>
 	);
 }

@@ -9,6 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import ThemeSwitch from "../ThemeSwitch";
+import Image from "next/image";
 
 export const FloatingNav = ({
 	navItems,
@@ -23,7 +24,6 @@ export const FloatingNav = ({
 }) => {
 	const [isMobile, setIsMobile] = useState(false);
 	const [visible, setVisible] = useState(true);
-	const [pastViewport, setPastViewport] = useState(false);
 	const { scrollY } = useScroll();
 	const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -48,9 +48,7 @@ export const FloatingNav = ({
 
 		if (currentScrollY <= viewportHeight) {
 			setVisible(true);
-			setPastViewport(false);
 		} else {
-			setPastViewport(true);
 			if (currentScrollY < lastScrollY) {
 				setVisible(true);
 			} else {
@@ -63,7 +61,13 @@ export const FloatingNav = ({
 
 	const MobileTopNavbar = () => (
 		<div className="flex justify-between items-center px-4 py-2 fixed top-0 left-0 right-0 bg-white dark:bg-stone-950/80 backdrop-filter backdrop-blur-sm z-[5001]">
-			<img src="/logo.svg" alt="logo" className="w-20" />
+			<Image
+				src="/logo.svg"
+				alt="logo"
+				width={200}
+				height={200}
+				className="w-20"
+			/>
 			<ThemeSwitch />
 		</div>
 	);
@@ -87,11 +91,17 @@ export const FloatingNav = ({
 				>
 					{!isMobile && (
 						<div className="w-fit ml-8">
-							<img src="/logo.svg" alt="logo" className="w-20" />
+							<Image
+								src="/logo.svg"
+								alt="logo"
+								width={200}
+								height={200}
+								className="w-20"
+							/>
 						</div>
 					)}
 					<div className="flex items-center justify-between space-x-4 w-full md:w-fit">
-						{navItems.map((navItem: any, idx: number) => (
+						{navItems.map((navItem, idx: number) => (
 							<Link
 								key={`link=${idx}`}
 								href={navItem.link}

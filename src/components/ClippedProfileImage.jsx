@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const ClippedProfileImage = ({ src, alt, className = "" }) => {
@@ -19,9 +20,11 @@ const ClippedProfileImage = ({ src, alt, className = "" }) => {
 					</clipPath>
 				</defs>
 			</svg>
-			<img
+			<Image
 				src={src}
 				alt={alt}
+				width={600}
+				height={600}
 				className="absolute inset-0 w-full h-full object-cover"
 				style={{ clipPath: "url(#customShape)" }}
 			/>

@@ -98,7 +98,7 @@ const Content = ({
 	img?: string;
 	desc: string;
 	imgPosition: "left" | "right";
-	btnName?: string | React.ReactNode | any;
+	btnName?: string | React.ReactNode;
 }) => {
 	return (
 		<div
